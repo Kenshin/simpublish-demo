@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "name": "simpublish",
+  "version": "0.6.1",
+  "description": "Publish SimpRead output HTMLs to create permalinks",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "package": "svelte-kit package",
+    "preview": "svelte-kit preview"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/kit": "next",
+    "carbon-components-svelte": "^0.63.4",
+    "carbon-icons-svelte": "^11.0.1",
+    "svelte": "^3.46.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@fontsource/fira-mono": "^4.5.0",
+    "@lottiefiles/svelte-lottie-player": "^0.2.0",
+    "@lukeed/uuid": "^2.0.0",
+    "@sveltejs/svelte-virtual-list": "^3.0.1",
+    "cookie": "^0.4.1",
+    "js-cookie": "^3.0.1"
+  }
+}

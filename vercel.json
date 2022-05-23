@@ -1,0 +1,24 @@
+{
+  "functions": {
+    "api/article.go": {
+      "includeFiles": "_output/**"
+    },
+    "api/list.go": {
+      "includeFiles": "_output/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/articles/:id",
+      "destination": "/api/article?id=:id"
+    },
+    {
+      "source": "/articles/:id/",
+      "destination": "/api/article?id=:id"
+    },
+    {
+      "source": "/simpread/",
+      "destination": "https://github.com"
+    }
+  ]
+}
