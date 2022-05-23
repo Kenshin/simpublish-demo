@@ -99,7 +99,7 @@
 <pre class="hljs perl">msg := dtmcli.NewMsg(DtmServer, gid).
 	Add(busi.Busi+<span class="hljs-string">"/UpdateRedis"</span>, &amp;Re<span class="hljs-string">q{Key: key1}</span>)
 err := msg.DoAndSubmitDB(busi.Busi+<span class="hljs-string">"/QueryPrepared"</span>, db, func(tx *sql.Tx) error {
-  <span class="hljs-regexp"></span> update db data with key1
+  <span class="hljs-regexp">//</span> update db data with key1
 })</pre>
 <p>这段代码，DoAndSubmitDB 会进行本地数据库操作，进行数据库的数据修改，修改完成后，会提交一个二阶段消息事务，消息事务将会异步调用 UpdateRedis 。假如本地事务执行之后，就立刻发生了进程 crash 事件，那么 dtm 会进行回查调用 QueryPrepared ，保证本地事务提交成功的情况下，UpdateRedis 会被最少成功执行一次。</p>
 <p>回查的逻辑非常简单，只需要 copy 类似下面这样的代码即可：</p>
